@@ -89,7 +89,12 @@ export const login = catchAsyncErrors(async (req, res, next) => {
 });
 
 export const logout = catchAsyncErrors(async (req, res, next) => {
-   res.clearCookie("token", { httpOnly: true }).json({
+   res.clearCookie("token", {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "None",
+      path: "/",
+   }).json({
       success: true,
       message: "Logged Out",
    });
