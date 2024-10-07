@@ -17,7 +17,7 @@ const Contact = () => {
       setLoading(true);
       try {
          const { data } = await axios.post(
-            "http://localhost:4000/api/v1/message/send",
+            "https://my-portfolio-backend-79fy.onrender.com/api/v1/message/send",
             { senderName, subject, message },
             { withCredentials: true }
          );

@@ -71,7 +71,7 @@ const timelineSlice = createSlice({
 export const getAllTimeline = () => async (dispatch) => {
     dispatch(timelineSlice.actions.getAllTimelineRequest())
     try {
-        const {data} = await axios.get('http://localhost:4000/api/v1/timeline/get-all', {withCredentials: true})
+        const {data} = await axios.get('https://my-portfolio-backend-79fy.onrender.com/api/v1/timeline/get-all', {withCredentials: true})
         dispatch(timelineSlice.actions.getAllTimelineSuccess(data.timelines))
         dispatch(timelineSlice.actions.clearAllErrors())
     } catch (error) {
@@ -83,7 +83,7 @@ export const getAllTimeline = () => async (dispatch) => {
 export const deleteTimeline = (timelineId) => async (dispatch) => {
     dispatch(timelineSlice.actions.deleteTimelineRequest())
     try {
-        const {data} = await axios.delete(`http://localhost:4000/api/v1/timeline/delete/${timelineId}`, {withCredentials: true})
+        const {data} = await axios.delete(`https://my-portfolio-backend-79fy.onrender.com/api/v1/timeline/delete/${timelineId}`, {withCredentials: true})
         dispatch(timelineSlice.actions.deleteTimelineSuccess(data.message))
         dispatch(timelineSlice.actions.clearAllErrors())
     } catch (error) {
@@ -95,7 +95,7 @@ export const deleteTimeline = (timelineId) => async (dispatch) => {
 export const addNewTimeline = (timelineData) => async (dispatch) => {
     dispatch(timelineSlice.actions.addTimelineRequest())
     try {
-        const {data} = await axios.post(`http://localhost:4000/api/v1/timeline/add/`,timelineData, {withCredentials: true})
+        const {data} = await axios.post(`https://my-portfolio-backend-79fy.onrender.com/api/v1/timeline/add/`,timelineData, {withCredentials: true})
         dispatch(timelineSlice.actions.addTimelineSuccess(data.message))
         dispatch(timelineSlice.actions.clearAllErrors())
     } catch (error) {

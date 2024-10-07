@@ -87,7 +87,7 @@ export const getAllSkills = () => async (dispatch) => {
    dispatch(skillSlice.actions.getAllSkillsRequest());
    try {
       const { data } = await axios.get(
-         "http://localhost:4000/api/v1/skill/get-all",
+         "https://my-portfolio-backend-79fy.onrender.com/api/v1/skill/get-all",
          { withCredentials: true }
       );
       dispatch(skillSlice.actions.getAllSkillsSuccess(data.skills));
@@ -104,7 +104,7 @@ export const addNewSkill = (data) => async (dispatch) => {
    dispatch(skillSlice.actions.addNewSkillRequest());
    try {
       const response = await axios.post(
-         "http://localhost:4000/api/v1/skill/add",
+         "https://my-portfolio-backend-79fy.onrender.com/api/v1/skill/add",
          data,
          {
             withCredentials: true,
@@ -124,7 +124,7 @@ export const addNewSkill = (data) => async (dispatch) => {
 export const deleteSkill = (skillId) => async (dispatch) => {
     dispatch(skillSlice.actions.deleteSkillRequest())
     try {
-        const {data} = await axios.delete(`http://localhost:4000/api/v1/skill/delete/${skillId}`, {withCredentials: true})
+        const {data} = await axios.delete(`https://my-portfolio-backend-79fy.onrender.com/api/v1/skill/delete/${skillId}`, {withCredentials: true})
         dispatch(skillSlice.actions.deleteSkillSuccess(data.message))
         dispatch(skillSlice.actions.clearAllErrors())
     } catch (error) {
@@ -136,7 +136,7 @@ export const deleteSkill = (skillId) => async (dispatch) => {
 export const updateSkill = (skillId, proficiency) => async (dispatch) => {
    dispatch(skillSlice.actions.updateSkillRequest())
    try {
-      const {data} = await axios.put(`http://localhost:4000/api/v1/skill/update/${skillId}`, {proficiency}, {withCredentials: true, headers: {"Content-Type": "application/json"}})
+      const {data} = await axios.put(`https://my-portfolio-backend-79fy.onrender.com/api/v1/skill/update/${skillId}`, {proficiency}, {withCredentials: true, headers: {"Content-Type": "application/json"}})
       dispatch(skillSlice.actions.updateSkillSuccess(data.message))
       dispatch(skillSlice.actions.clearAllErrors())
    } catch (error) {

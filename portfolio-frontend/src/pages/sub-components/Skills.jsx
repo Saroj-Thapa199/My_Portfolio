@@ -8,7 +8,7 @@ const Skills = () => {
    useEffect(() => {
       const getMySkills = async () => {
          const { data } = await axios.get(
-            "http://localhost:4000/api/v1/skill/get-all",
+            "https://my-portfolio-backend-79fy.onrender.com/api/v1/skill/get-all",
             { withCredentials: true }
          );
          setSkills(data.skills);

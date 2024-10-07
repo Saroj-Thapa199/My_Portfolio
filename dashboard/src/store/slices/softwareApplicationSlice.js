@@ -72,7 +72,7 @@ export const getAllSoftwareApplications = () => async (dispatch) => {
    dispatch(softwareApplicationSlice.actions.getAllApplicationsRequest());
    try {
       const { data } = await axios.get(
-         "http://localhost:4000/api/v1/software-application/get-all",
+         "https://my-portfolio-backend-79fy.onrender.com/api/v1/software-application/get-all",
          { withCredentials: true }
       );
       dispatch(
@@ -93,7 +93,7 @@ export const addNewSoftwareApplication = (data) => async (dispatch) => {
    dispatch(softwareApplicationSlice.actions.addNewApplicationRequest());
    try {
       const response = await axios.post(
-         "http://localhost:4000/api/v1/software-application/add",
+         "https://my-portfolio-backend-79fy.onrender.com/api/v1/software-application/add",
          data,
          {
             withCredentials: true,
@@ -120,7 +120,7 @@ export const deleteSoftwareApplication = (skillId) => async (dispatch) => {
    dispatch(softwareApplicationSlice.actions.deleteApplicationRequest());
    try {
       const { data } = await axios.delete(
-         `http://localhost:4000/api/v1/software-application/delete/${skillId}`,
+         `https://my-portfolio-backend-79fy.onrender.com/api/v1/software-application/delete/${skillId}`,
          { withCredentials: true }
       );
       dispatch(
