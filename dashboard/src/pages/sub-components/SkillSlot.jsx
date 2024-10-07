@@ -15,7 +15,7 @@ const SkillSlot = ({ skill, handleUpdate, handleDelete }) => {
    const [proficiency, setProficiency] = useState(skill.proficiency);
 
    return (
-      <CardHeader className='shadow-md border-gray-300 border rounded-2xl '>
+      <CardHeader className='max-sm:p-3 shadow-md border-gray-300 border rounded-2xl '>
          <CardHeader className='text-3xl font-bold items-center justify-between flex-row'>
             {skill.title}
             <TooltipProvider>

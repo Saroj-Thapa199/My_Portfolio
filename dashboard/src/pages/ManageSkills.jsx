@@ -72,7 +72,7 @@ const ManageSkills = () => {
                         <Button className='w-fit'>Return to Dashboard</Button>
                      </Link>
                   </CardHeader>
-                  <CardContent className='grid sm:grid-cols-2 gap-4'>
+                  <CardContent className='max-sm:p-3 grid sm:grid-cols-2 gap-4'>
                      {skills && skills.length > 0 ? (
                         skills.map((skill) => (
                            <SkillSlot
