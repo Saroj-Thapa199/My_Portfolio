@@ -57,6 +57,7 @@ const UpdateProfile = () => {
 
    const handleUpdateProfile = () => {
       const formData = new FormData();
+      formData.append("fullName", fullName)
       formData.append("email", email);
       formData.append("phone", phone);
       formData.append("aboutMe", aboutMe);
